@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship - Contact Us</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'], 
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FDFBF7',      
+                            panel: '#F0F2EA',   
+                            yellow: '#FFC83E',  
+                            dark: '#0A0A0A',
+                            gray: '#F3F5F2',
+                            teal: '#A4C6B8',
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'soft': '0 20px 40px -10px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FDFBF7; overflow-x: hidden; }
+        
+        .map-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Floating Paper Plane Animation */
+        .float-plane {
+            animation: floatPlane 4s ease-in-out infinite;
+        }
+        @keyframes floatPlane {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased relative" x-data="{ mobileMenu: false }">
+
+    <nav class="fixed w-full z-50 py-6 px-6 transition-all duration-300" :class="{ 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm': window.scrollY > 20 }">
+        <div class="container mx-auto flex justify-between items-center relative z-50">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                <span class="font-bold text-xl tracking-tight">Starship</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10 font-bold text-[11px] uppercase tracking-widest text-gray-800">
+                <a href="index.html" class="hover:text-brand-yellow transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-yellow transition-colors">About</a>
+                <a href="service.html" class="hover:text-brand-yellow transition-colors">Service</a>
+                <a href="contact.html" class="text-brand-yellow">Contact</a> </div>
+            
+            <a href="contact.html" class="hidden md:block border-2 border-brand-dark rounded-full px-8 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+            
+            <button class="md:hidden text-2xl" @click="mobileMenu = !mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+        
+        <div x-show="mobileMenu" x-transition class="absolute top-full left-0 w-full bg-white shadow-xl p-6 flex flex-col gap-4 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html" class="font-bold">Contact</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-16 text-center">
+        <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+            <div class="inline-block bg-brand-yellow px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide mb-6">Contact Us</div>
+            
+            <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 max-w-4xl mx-auto">
+                Let's start a <span class="italic font-serif font-light text-brand-teal">conversation</span>
+            </h1>
+            
+            <p class="text-gray-500 text-sm leading-relaxed mb-10 max-w-xl mx-auto">
+                Whether you have a question about features, pricing, or just want to say hello, our team is ready to answer all your questions.
+            </p>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-6 pb-24">
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-4 space-y-6">
+                
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-soft group hover:shadow-lg transition-all" data-aos="fade-right" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-panel rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <h5 class="font-bold text-lg mb-2">Email Us</h5>
+                    <p class="text-gray-500 text-sm mb-4">Our friendly team is here to help.</p>
+                    <a href="mailto:hello@starship.com" class="font-bold text-sm border-b border-black pb-0.5 hover:text-brand-yellow hover:border-brand-yellow transition-colors">hello@starship.com</a>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-soft group hover:shadow-lg transition-all" data-aos="fade-right" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-panel rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <h5 class="font-bold text-lg mb-2">Visit Us</h5>
+                    <p class="text-gray-500 text-sm mb-4">Come say hello at our office HQ.</p>
+                    <p class="font-bold text-sm">100 Smith Street, Melbourne<br>VIC 3000, AU</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-soft group hover:shadow-lg transition-all" data-aos="fade-right" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-panel rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-yellow transition-colors">
+                        <i class="fas fa-phone text-xl"></i>
+                    </div>
+                    <h5 class="font-bold text-lg mb-2">Call Us</h5>
+                    <p class="text-gray-500 text-sm mb-4">Mon-Fri from 8am to 5pm.</p>
+                    <a href="tel:+1234567890" class="font-bold text-sm border-b border-black pb-0.5 hover:text-brand-yellow hover:border-brand-yellow transition-colors">+1 (555) 000-0000</a>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-8" data-aos="fade-left">
+                <div class="bg-white p-8 md:p-12 rounded-[3rem] border border-gray-100 shadow-lg relative overflow-hidden">
+                    
+                    <div class="absolute -top-10 -right-10 text-brand-panel opacity-50 pointer-events-none float-plane">
+                        <i class="fas fa-paper-plane text-[15rem]"></i>
+                    </div>
+
+                    <h3 class="text-3xl font-bold mb-2 relative z-10">Send us a message</h3>
+                    <p class="text-gray-500 text-sm mb-8 relative z-10">We'll get back to you within 24 hours.</p>
+
+                    <form class="space-y-6 relative z-10">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">First Name</label>
+                                <input type="text" placeholder="John" class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">Last Name</label>
+                                <input type="text" placeholder="Doe" class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">Email</label>
+                                <input type="email" placeholder="john@example.com" class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">Phone</label>
+                                <input type="tel" placeholder="+1 (555) 000-0000" class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                             <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">Subject</label>
+                             <select class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white appearance-none cursor-pointer">
+                                 <option>General Inquiry</option>
+                                 <option>Project Proposal</option>
+                                 <option>Support</option>
+                                 <option>Careers</option>
+                             </select>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-xs font-bold uppercase tracking-wider text-gray-500 ml-2">Message</label>
+                            <textarea rows="5" placeholder="Tell us about your project..." class="w-full bg-brand-gray px-6 py-4 rounded-2xl outline-none focus:ring-2 focus:ring-brand-yellow transition-all border border-transparent focus:bg-white resize-none"></textarea>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="button" class="bg-brand-dark text-white w-full py-4 rounded-2xl font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-gray-800 transition-all hover:scale-[1.01] shadow-xl group">
+                                Send Message <div class="bg-brand-yellow w-6 h-6 rounded-full flex items-center justify-center text-brand-dark group-hover:rotate-45 transition-transform"><i class="fas fa-arrow-up text-[10px]"></i></div>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 pb-24">
+        <div class="w-full h-96 rounded-[3rem] overflow-hidden relative shadow-lg" data-aos="zoom-in">
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Map" class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 transition-all duration-700">
+            
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div class="relative">
+                    <div class="w-16 h-16 bg-brand-yellow rounded-full border-4 border-white shadow-2xl flex items-center justify-center animate-bounce">
+                        <i class="fas fa-star text-2xl text-brand-dark"></i>
+                    </div>
+                    <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-2 bg-black/20 blur-sm rounded-full"></div>
+                    
+                    <div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-white px-4 py-2 rounded-xl shadow-lg whitespace-nowrap text-xs font-bold">
+                        Starship HQ
+                        <div class="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-white rotate-45"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gradient-to-t from-[#F0F2EA] to-[#FDFBF7] pt-24 pb-12">
+        <div class="container mx-auto px-6 text-center">
+            
+            <div class="max-w-2xl mx-auto mb-16">
+                <a href="index.html" class="flex items-center justify-center gap-2 group mb-6">
+                    <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                    <span class="font-bold text-2xl tracking-tight">Starship</span>
+                </a>
+                <p class="text-gray-500 mb-6">Subscribe to our newsletter for the latest updates and marketing tips.</p>
+                <div class="flex items-center bg-white border border-gray-200 p-1 rounded-full max-w-md mx-auto shadow-sm">
+                    <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent px-6 py-2 text-sm outline-none">
+                    <button class="w-10 h-10 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors"><i class="fas fa-arrow-right text-xs"></i></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-gray-200 pt-12 mb-12">
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Support</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Account Info</a></li>
+                        <li><a href="about.html" class="hover:text-black transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Product</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Updates</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Beta Test</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Company</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="about.html" class="hover:text-black transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">News</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Social</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-xs text-gray-400 font-medium">
+                &copy; 2025 Starship Agency. All rights reserved. <br class="md:hidden"> <span class="hidden md:inline mx-2">•</span> <a href="#" class="hover:text-gray-600">Privacy Policy</a> <span class="mx-2">•</span> <a href="#" class="hover:text-gray-600">Terms of Service</a>
+            </div>
+            
+             <div class="mt-6 font-bold text-sm flex items-center justify-center gap-2">
+                <i class="far fa-envelope"></i> hello@starship.com
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>

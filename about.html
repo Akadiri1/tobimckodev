@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship - About Us</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'], 
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FDFBF7',      
+                            panel: '#F0F2EA',   
+                            yellow: '#FFC83E',  
+                            bluegrey: '#A7BCC1',
+                            dark: '#0A0A0A',
+                            gray: '#F3F5F2',
+                            teal: '#A4C6B8', // Icon color
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'soft': '0 20px 40px -10px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FDFBF7; overflow-x: hidden; }
+        
+        /* Gradient Text for Icons */
+        .icon-gradient {
+            background: linear-gradient(135deg, #A4C6B8 0%, #D4E2DC 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 15px 35px -5px rgba(0,0,0,0.05);
+        }
+
+        /* Timeline Connector Line */
+        .timeline-line::before {
+            content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: #E5E7EB; transform: translateX(-50%); z-index: -1;
+        }
+
+        /* CTA Pattern */
+        .cta-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='90%25' cy='50%25' r='200' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='8 8' opacity='0.1'/%3E%3Ccircle cx='90%25' cy='50%25' r='140' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='8 8' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased relative" x-data="{ mobileMenu: false }">
+
+    <nav class="fixed w-full z-50 py-6 px-6 transition-all duration-300" :class="{ 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm': window.scrollY > 20 }">
+        <div class="container mx-auto flex justify-between items-center relative z-50">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                <span class="font-bold text-xl tracking-tight">Starship</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10 font-bold text-[11px] uppercase tracking-widest text-gray-800">
+                <a href="index.html" class="hover:text-brand-yellow transition-colors">Home</a>
+                <a href="about.html" class="text-brand-yellow">About</a>
+                <a href="service.html" class="hover:text-brand-yellow transition-colors">Service</a>
+                <a href="contact.html" class="hover:text-brand-yellow transition-colors">Contact</a>
+            </div>
+            
+            <a href="contact.html" class="hidden md:block border-2 border-brand-dark rounded-full px-8 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+            
+            <button class="md:hidden text-2xl" @click="mobileMenu = !mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+        
+        <div x-show="mobileMenu" x-transition class="absolute top-full left-0 w-full bg-white shadow-xl p-6 flex flex-col gap-4 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html" class="font-bold">About</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 text-center">
+        <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+            <div class="inline-block bg-brand-yellow px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide mb-6">Who We Are</div>
+            
+            <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 max-w-4xl mx-auto">
+                Digital Marketing Experts Crafting <span class="italic font-serif font-light text-brand-teal">Campaigns</span> That Launch
+            </h1>
+            
+            <p class="text-gray-500 text-sm leading-relaxed mb-10 max-w-2xl mx-auto">
+                From ambitious start-ups to industry leaders, we empower businesses to reach their full digital potential through data-driven strategies.
+            </p>
+            
+            <div class="flex items-center justify-center gap-6 mb-20">
+                <a href="contact.html" class="bg-brand-dark text-white pl-8 pr-2 py-2 rounded-full font-bold text-[11px] uppercase tracking-[0.15em] flex items-center gap-6 hover:scale-105 transition-transform shadow-xl group">Get Started <div class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-brand-yellow group-hover:border-brand-yellow transition-colors"><i class="fas fa-arrow-right -rotate-45"></i></div></a>
+                <a href="#rocket" class="font-bold text-[11px] uppercase tracking-[0.15em] hover:text-gray-600 transition-colors">Learn More</a>
+            </div>
+
+            <div class="bg-brand-gray rounded-[2.5rem] py-10 px-8 flex flex-wrap justify-around items-center gap-8 shadow-soft max-w-5xl mx-auto">
+                <div class="text-center"><h3 class="text-3xl font-bold mb-1">12</h3><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Years Experience</p></div>
+                <div class="hidden md:block w-px h-12 bg-gray-300"></div>
+                <div class="text-center"><h3 class="text-3xl font-bold mb-1">5.6M+</h3><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Total Users</p></div>
+                <div class="hidden md:block w-px h-12 bg-gray-300"></div>
+                <div class="text-center"><h3 class="text-3xl font-bold mb-1">4.8</h3><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Average Rating</p></div>
+                <div class="hidden md:block w-px h-12 bg-gray-300"></div>
+                <div class="text-center"><h3 class="text-3xl font-bold mb-1">80+</h3><p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Intl Teams</p></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="rocket" class="container mx-auto px-6 py-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <div class="bg-brand-yellow w-12 h-6 rounded-full flex items-center justify-center mb-6"><i class="fas fa-rocket text-[10px]"></i></div>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">The Rocket Fuel for Your Business</h2>
+                <p class="text-gray-500 mb-8 leading-relaxed">We don't just create campaigns; we ignite movements. Our team combines creative brilliance with analytical precision to ensure your brand doesn't just grow—it soars.</p>
+                <a href="service.html" class="flex items-center gap-2 font-bold text-sm uppercase tracking-wider hover:gap-4 transition-all">Explore Services <div class="bg-brand-yellow rounded-full w-5 h-5 flex items-center justify-center text-[10px]"><i class="fas fa-arrow-right"></i></div></a>
+            </div>
+            <div class="relative h-[400px]" data-aos="fade-left">
+                <div class="absolute top-0 right-0 w-[90%] h-[80%] bg-white rounded-[2rem] border border-gray-100 shadow-lg p-6 z-10">
+                    <div class="flex justify-between items-center mb-6 border-b pb-4">
+                         <div class="flex items-center gap-3">
+                             <div class="w-8 h-8 rounded-full bg-brand-yellow/20 flex items-center justify-center"><i class="fas fa-user text-brand-yellow text-xs"></i></div>
+                             <span class="text-xs font-bold">New Customers</span>
+                         </div>
+                         <span class="text-xs font-bold">+24%</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="h-2 bg-gray-100 rounded-full w-full"><div class="h-full bg-brand-yellow w-[70%] rounded-full"></div></div>
+                        <div class="h-2 bg-gray-100 rounded-full w-full"><div class="h-full bg-brand-teal w-[50%] rounded-full"></div></div>
+                    </div>
+                </div>
+                <div class="absolute bottom-10 left-0 w-[60%] bg-brand-panel glass-card p-6 rounded-[2rem] z-20 animate-bounce" style="animation-duration: 5s;">
+                    <p class="text-xs text-gray-500 font-bold uppercase mb-2">Total Sales</p>
+                    <h3 class="text-4xl font-bold mb-1">258</h3>
+                    <p class="text-[10px] text-gray-400">Since last week</p>
+                </div>
+                <div class="absolute top-[40%] right-[-20px] bg-brand-yellow px-6 py-4 rounded-2xl shadow-xl z-30">
+                    <p class="text-xs font-bold">$150 <span class="font-normal opacity-70">Daily</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center group" data-aos="fade-up" data-aos-delay="0">
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-yellow flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform"><i class="fas fa-lightbulb text-xl text-black"></i></div>
+                <h4 class="font-bold">Innovation</h4>
+            </div>
+            <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-yellow flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform"><i class="fas fa-handshake text-xl text-black"></i></div>
+                <h4 class="font-bold">Collaboration</h4>
+            </div>
+            <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-yellow flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform"><i class="fas fa-medal text-xl text-black"></i></div>
+                <h4 class="font-bold">Excellence</h4>
+            </div>
+            <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-16 h-16 mx-auto rounded-full bg-brand-yellow flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform"><i class="fas fa-heart text-xl text-black"></i></div>
+                <h4 class="font-bold">Client Centric</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-24 relative timeline-line">
+        <div class="text-center mb-20">
+            <div class="inline-block bg-brand-yellow px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide">Our Process</div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20 relative">
+            <div class="md:text-right order-2 md:order-1" data-aos="fade-right">
+                <h3 class="text-3xl font-bold mb-4">Planning</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs ml-auto">We start by understanding your goals, market, and audience to craft a roadmap for success.</p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center md:justify-start" data-aos="zoom-in">
+                <div class="w-32 h-32 bg-brand-panel rounded-[2rem] flex items-center justify-center shadow-soft">
+                    <i class="far fa-lightbulb text-5xl text-brand-teal"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20 relative">
+            <div class="md:text-right order-2 md:order-1 flex justify-center md:justify-end" data-aos="zoom-in">
+                <div class="w-32 h-32 bg-brand-panel rounded-[2rem] flex items-center justify-center shadow-soft">
+                     <i class="fas fa-tasks text-5xl text-brand-teal"></i>
+                </div>
+            </div>
+            <div class="order-1 md:order-2" data-aos="fade-left">
+                <h3 class="text-3xl font-bold mb-4">Execution</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">Our creative team brings the strategy to life with stunning visuals and compelling copy.</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20 relative">
+            <div class="md:text-right order-2 md:order-1" data-aos="fade-right">
+                <h3 class="text-3xl font-bold mb-4">Monitoring</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs ml-auto">We keep a close eye on performance, ensuring every dollar spent delivers maximum ROI.</p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center md:justify-start" data-aos="zoom-in">
+                <div class="w-32 h-32 bg-brand-panel rounded-[2rem] flex items-center justify-center shadow-soft">
+                     <i class="fas fa-search-dollar text-5xl text-brand-teal"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center relative">
+            <div class="md:text-right order-2 md:order-1 flex justify-center md:justify-end" data-aos="zoom-in">
+                <div class="w-32 h-32 bg-brand-panel rounded-[2rem] flex items-center justify-center shadow-soft">
+                     <i class="fas fa-video text-5xl text-brand-teal"></i>
+                </div>
+            </div>
+            <div class="order-1 md:order-2" data-aos="fade-left">
+                <h3 class="text-3xl font-bold mb-4">Optimization</h3>
+                <p class="text-gray-500 text-sm leading-relaxed max-w-xs">Continuous improvement is key. We refine and adjust to keep you ahead of the curve.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20 bg-white rounded-[3rem]">
+        <div class="text-center mb-16">
+            <div class="inline-block bg-brand-yellow px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide mb-4">Our Team</div>
+            <h2 class="text-4xl font-bold">Our Creative Team of Innovators<br>and Strategists at Work</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="0">
+                <div class="overflow-hidden rounded-3xl mb-4 h-64 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Jenny" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Jenny Wilson</h4>
+                <p class="text-xs text-gray-500 uppercase">Head of Design</p>
+            </div>
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+                <div class="overflow-hidden rounded-3xl mb-4 h-64 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Floyd" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Floyd Miles</h4>
+                <p class="text-xs text-gray-500 uppercase">Marketing Director</p>
+            </div>
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+                <div class="overflow-hidden rounded-3xl mb-4 h-64 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Jane" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Jane Cooper</h4>
+                <p class="text-xs text-gray-500 uppercase">SEO Specialist</p>
+            </div>
+            <div class="group cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+                <div class="overflow-hidden rounded-3xl mb-4 h-64 bg-gray-100">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Robert" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <h4 class="font-bold text-lg">Robert Fox</h4>
+                <p class="text-xs text-gray-500 uppercase">Lead Developer</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+        <div class="bg-brand-panel rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center cta-pattern" data-aos="fade-up">
+            <div class="relative z-10 max-w-xl">
+                <h2 class="text-5xl font-bold mb-6">Let's discuss your project</h2>
+                <p class="text-gray-500 mb-8 max-w-sm">We are ready to scale your business. Get a free consultation with our experts today.</p>
+                <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-3 hover:bg-gray-800 transition-colors">
+                    Get In Touch <i class="fas fa-arrow-right -rotate-45 text-brand-yellow"></i>
+                </a>
+            </div>
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full hidden md:block">
+               <div class="absolute top-[30%] right-[30%] w-8 h-8 bg-brand-yellow rounded-full border-2 border-white shadow-lg animate-bounce"></div>
+               <div class="absolute bottom-[20%] right-[20%] w-12 h-12 bg-brand-yellow rounded-full border-2 border-white shadow-lg"></div>
+               <div class="absolute top-[60%] right-[10%] w-6 h-6 bg-brand-yellow rounded-full border-2 border-white shadow-lg"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gradient-to-t from-[#F0F2EA] to-[#FDFBF7] pt-24 pb-12 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            
+            <div class="max-w-2xl mx-auto mb-16">
+                <a href="index.html" class="flex items-center justify-center gap-2 group mb-6">
+                    <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                    <span class="font-bold text-2xl tracking-tight">Starship</span>
+                </a>
+                <p class="text-gray-500 mb-6">Subscribe to our newsletter for the latest updates and marketing tips.</p>
+                <div class="flex items-center bg-white border border-gray-200 p-1 rounded-full max-w-md mx-auto shadow-sm">
+                    <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent px-6 py-2 text-sm outline-none">
+                    <button class="w-10 h-10 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors"><i class="fas fa-arrow-right text-xs"></i></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-gray-200 pt-12 mb-12">
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Support</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Account Info</a></li>
+                        <li><a href="about.html" class="hover:text-black transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Product</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Updates</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Beta Test</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Company</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="about.html" class="hover:text-black transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">News</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Social</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-xs text-gray-400 font-medium">
+                &copy; 2025 Starship Agency. All rights reserved. <br class="md:hidden"> <span class="hidden md:inline mx-2">•</span> <a href="#" class="hover:text-gray-600">Privacy Policy</a> <span class="mx-2">•</span> <a href="#" class="hover:text-gray-600">Terms of Service</a>
+            </div>
+            
+             <div class="mt-6 font-bold text-sm flex items-center justify-center gap-2">
+                <i class="far fa-envelope"></i> hello@starship.com
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>

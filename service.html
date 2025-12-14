@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship - Services</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'], 
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FDFBF7',      
+                            panel: '#F0F2EA',   
+                            yellow: '#FFC83E',  
+                            bluegrey: '#A7BCC1',
+                            dark: '#0A0A0A',
+                            gray: '#F3F5F2',
+                            teal: '#A4C6B8',
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                        'soft': '0 20px 40px -10px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FDFBF7; overflow-x: hidden; }
+        
+        /* Process Card Gradient */
+        .process-card {
+            background: linear-gradient(180deg, #E8EFE9 0%, #FFFFFF 100%);
+        }
+
+        /* Line Decoration for Clients */
+        .client-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='90%25' cy='50%25' r='200' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='8 8' opacity='0.1'/%3E%3Ccircle cx='10%25' cy='50%25' r='150' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='8 8' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased relative" x-data="{ mobileMenu: false }">
+
+    <nav class="fixed w-full z-50 py-6 px-6 transition-all duration-300" :class="{ 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm': window.scrollY > 20 }">
+        <div class="container mx-auto flex justify-between items-center relative z-50">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                <span class="font-bold text-xl tracking-tight">Starship</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10 font-bold text-[11px] uppercase tracking-widest text-gray-800">
+                <a href="index.html" class="hover:text-brand-yellow transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-yellow transition-colors">About</a>
+                <a href="service.html" class="text-brand-yellow">Service</a>
+                <a href="contact.html" class="hover:text-brand-yellow transition-colors">Contact</a>
+            </div>
+            
+            <a href="contact.html" class="hidden md:block border-2 border-brand-dark rounded-full px-8 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+            
+            <button class="md:hidden text-2xl" @click="mobileMenu = !mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+        
+        <div x-show="mobileMenu" x-transition class="absolute top-full left-0 w-full bg-white shadow-xl p-6 flex flex-col gap-4 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html" class="font-bold">Service</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-20 text-center">
+        <div class="container mx-auto px-6 relative z-10" data-aos="fade-up">
+            <div class="inline-block bg-brand-yellow px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide mb-6">Services</div>
+            
+            <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 max-w-4xl mx-auto">
+                Providing <span class="italic font-serif font-light text-gray-400">top-tier</span> digital <br> marketing solutions
+            </h1>
+            
+            <p class="text-gray-500 text-sm leading-relaxed mb-10 max-w-xl mx-auto">
+                Start with our digital agency that helps your business grow with industry-leading strategies and tools.
+            </p>
+            
+            <div class="flex items-center justify-center gap-6 mb-20">
+                <a href="contact.html" class="bg-brand-dark text-white pl-8 pr-2 py-2 rounded-full font-bold text-[11px] uppercase tracking-[0.15em] flex items-center gap-6 hover:scale-105 transition-transform shadow-xl group">Get Started <div class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center text-brand-yellow group-hover:border-brand-yellow transition-colors"><i class="fas fa-arrow-right -rotate-45"></i></div></a>
+                <a href="#details" class="font-bold text-[11px] uppercase tracking-[0.15em] hover:text-gray-600 transition-colors">Learn More</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-6 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="h-64 md:h-80 rounded-[2.5rem] overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="h-64 md:h-80 rounded-[2.5rem] overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+            <div class="h-64 md:h-80 rounded-[2.5rem] overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section id="details" class="container mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <h2 class="text-4xl lg:text-5xl font-bold max-w-lg leading-tight" data-aos="fade-right">Boost Your Online Presence</h2>
+            <p class="text-gray-500 text-sm max-w-xs md:text-right" data-aos="fade-left">From strategy to support, we ensure your online presence drives results.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-4 space-y-8" data-aos="fade-up">
+                <div class="process-card p-8 rounded-[2.5rem] border border-gray-100 shadow-soft">
+                    <div class="inline-block bg-brand-yellow px-3 py-1 rounded-full text-[10px] font-bold uppercase mb-6">Our Process</div>
+                    <h3 class="text-2xl font-bold mb-8">Our Step-by-Step Process for High-Impact Websites</h3>
+                    
+                    <div class="space-y-8 relative">
+                        <div class="absolute left-6 top-4 bottom-4 w-0.5 bg-gray-200 -z-10"></div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-search text-xs"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Discovery & Strategy</h5>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">We analyze your goals and market to create a custom plan.</p>
+                            </div>
+                        </div>
+                         <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-pencil-alt text-xs"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Creative Design</h5>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">Crafting creative, high-performance visuals.</p>
+                            </div>
+                        </div>
+                         <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-code text-xs"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Development</h5>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">Smooth build with ongoing improvement for speed.</p>
+                            </div>
+                        </div>
+                         <div class="flex gap-4">
+                            <div class="w-12 h-12 rounded-full bg-brand-yellow flex-shrink-0 flex items-center justify-center border-4 border-white shadow-sm"><i class="fas fa-rocket text-xs"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Launch & Growth</h5>
+                                <p class="text-xs text-gray-500 mt-1 leading-relaxed">Continuous digital excellence to drive long-term success.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-4">Turning your concepts into <span class="italic font-serif text-gray-400">impactful</span> campaigns</h3>
+                    <p class="text-xs text-gray-500 leading-relaxed">Experience our methodology and see how we consistently blend creativity and data to craft digital stories that truly resonate.</p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8 space-y-6" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold group-hover:text-brand-yellow transition-colors">Search Engine Optimization (SEO)</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Keyword research and optimization</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Local and technical SEO</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> On-page and Off-page SEO</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> SEO audits and reporting</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold group-hover:text-brand-yellow transition-colors">Pay-Per-Click (PPC) Advertising</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Google Ads & Media extensions</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Bid strategies and targeting</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Campaign creation and management</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Campaign results and management</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold text-brand-yellow">Content Marketing</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></div> Content strategy marketing</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></div> Content distribution and promotion</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></div> Content creation</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-brand-yellow"></div> Content performance analysis</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold group-hover:text-brand-yellow transition-colors">Social Media Marketing</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Social media profile management</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Community management</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Content creation and scheduling</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Social media engagement</div>
+                    </div>
+                </div>
+                
+                 <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold group-hover:text-brand-yellow transition-colors">Email Marketing</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Email list building and segmentation</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Email automation and workflows</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Email campaign content and design</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Email deliverability optimization</div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-[2.5rem] border border-gray-100 hover:shadow-lg transition-shadow group relative cursor-pointer">
+                    <a href="detail.html" class="absolute inset-0 z-10"></a>
+                    <div class="flex justify-between items-start mb-6">
+                        <h3 class="text-xl font-bold group-hover:text-brand-yellow transition-colors">Web Design and Development</h3>
+                        <div class="w-8 h-8 rounded-full bg-brand-yellow flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:scale-110">
+                            <i class="fas fa-arrow-right -rotate-45 text-xs text-brand-dark"></i>
+                        </div>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Responsive web design</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Website maintenance and updates</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> Custom website development</div>
+                        <div class="flex items-center gap-2 text-sm text-gray-600"><div class="w-1.5 h-1.5 rounded-full bg-black group-hover:bg-brand-yellow transition-colors"></div> E-commerce solutions (storefronts)</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="bg-brand-panel rounded-[3rem] p-12 relative overflow-hidden client-pattern" data-aos="fade-up">
+            <h4 class="text-center font-bold mb-10">Our Trusted Clients</h4>
+            
+            <div class="flex flex-wrap justify-center gap-12 items-center opacity-70 grayscale">
+                 <div class="text-xl font-bold flex items-center gap-2"><i class="fas fa-leaf text-brand-yellow"></i> selfast</div>
+                 <div class="text-xl font-bold flex items-center gap-2"><i class="fas fa-layer-group text-blue-600"></i> evertags</div>
+                 <div class="text-xl font-bold flex items-center gap-2"><i class="fas fa-infinity text-orange-500"></i> goldrate</div>
+                 <div class="text-xl font-bold flex items-center gap-2"><i class="fas fa-database text-blue-400"></i> dataBites</div>
+            </div>
+
+            <div class="absolute -left-10 bottom-0 w-20 h-20 border border-gray-400/30 rounded-full"></div>
+            <div class="absolute left-10 bottom-10 w-8 h-8 bg-brand-yellow rounded-full"></div>
+            
+            <div class="absolute -right-10 bottom-0 w-40 h-40 border border-gray-400/30 rounded-full"></div>
+            <div class="absolute right-20 bottom-20 w-12 h-12 bg-brand-yellow rounded-full border-4 border-white"></div>
+        </div>
+    </section>
+
+    <footer class="bg-gradient-to-t from-[#F0F2EA] to-[#FDFBF7] pt-24 pb-12 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            
+            <div class="max-w-2xl mx-auto mb-16">
+                <a href="index.html" class="flex items-center justify-center gap-2 group mb-6">
+                    <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                    <span class="font-bold text-2xl tracking-tight">Starship</span>
+                </a>
+                <p class="text-gray-500 mb-6">Subscribe to our newsletter for the latest updates and marketing tips.</p>
+                <div class="flex items-center bg-white border border-gray-200 p-1 rounded-full max-w-md mx-auto shadow-sm">
+                    <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent px-6 py-2 text-sm outline-none">
+                    <button class="w-10 h-10 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors"><i class="fas fa-arrow-right text-xs"></i></button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-gray-200 pt-12 mb-12">
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Support</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Help Center</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Account Info</a></li>
+                        <li><a href="about.html" class="hover:text-black transition-colors">About</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Product</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Updates</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Security</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Beta Test</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Company</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="about.html" class="hover:text-black transition-colors">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-black transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Press</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">News</a></li>
+                    </ul>
+                </div>
+                 <div>
+                    <h5 class="font-bold text-xs uppercase tracking-widest mb-6">Social</h5>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-black transition-colors">Twitter</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-black transition-colors">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-xs text-gray-400 font-medium">
+                &copy; 2025 Starship Agency. All rights reserved. <br class="md:hidden"> <span class="hidden md:inline mx-2">•</span> <a href="#" class="hover:text-gray-600">Privacy Policy</a> <span class="mx-2">•</span> <a href="#" class="hover:text-gray-600">Terms of Service</a>
+            </div>
+            
+             <div class="mt-6 font-bold text-sm flex items-center justify-center gap-2">
+                <i class="far fa-envelope"></i> hello@starship.com
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>

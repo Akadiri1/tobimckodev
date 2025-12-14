@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starship - Service Details</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'], 
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#FDFBF7',      
+                            panel: '#F0F2EA',   
+                            yellow: '#FFC83E',  
+                            dark: '#0A0A0A',
+                            gray: '#F3F5F2',
+                            teal: '#A4C6B8',
+                        }
+                    },
+                    borderRadius: {
+                        '4xl': '2.5rem',
+                        '5xl': '3rem',
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -10px rgba(0,0,0,0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FDFBF7; overflow-x: hidden; }
+        .cta-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='90%25' cy='50%25' r='200' fill='none' stroke='%23333' stroke-width='1' stroke-dasharray='8 8' opacity='0.1'/%3E%3C/svg%3E");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="text-neutral-900 antialiased relative" x-data="{ mobileMenu: false, activeAccordion: 1 }">
+
+    <nav class="fixed w-full z-50 py-6 px-6 transition-all duration-300" :class="{ 'bg-[#FDFBF7]/90 backdrop-blur-md shadow-sm': window.scrollY > 20 }">
+        <div class="container mx-auto flex justify-between items-center relative z-50">
+            <a href="index.html" class="flex items-center gap-2 group">
+                <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                <span class="font-bold text-xl tracking-tight">Starship</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-10 font-bold text-[11px] uppercase tracking-widest text-gray-800">
+                <a href="index.html" class="hover:text-brand-yellow transition-colors">Home</a>
+                <a href="about.html" class="hover:text-brand-yellow transition-colors">About</a>
+                <a href="service.html" class="text-brand-yellow">Service</a> <a href="contact.html" class="hover:text-brand-yellow transition-colors">Contact</a>
+            </div>
+            
+            <a href="contact.html" class="hidden md:block border-2 border-brand-dark rounded-full px-8 py-2.5 text-[10px] font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-white transition-all">Get Started</a>
+            
+            <button class="md:hidden text-2xl" @click="mobileMenu = !mobileMenu"><i class="fas fa-bars"></i></button>
+        </div>
+        
+        <div x-show="mobileMenu" x-transition class="absolute top-full left-0 w-full bg-white shadow-xl p-6 flex flex-col gap-4 md:hidden">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html" class="font-bold">Service</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-40 pb-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-4">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <a href="service.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gray-400 mb-4 hover:text-brand-yellow transition-colors"><i class="fas fa-arrow-left"></i> Back to Services</a>
+                    <h1 class="text-5xl lg:text-6xl font-bold mb-6">Search Engine <br><span class="italic font-serif text-brand-teal">Optimization</span></h1>
+                    <p class="text-gray-500 text-sm leading-relaxed max-w-md">Increase your visibility and drive organic traffic with our data-driven SEO strategies tailored to your industry.</p>
+                </div>
+                <div class="md:w-1/2 w-full" data-aos="fade-left">
+                    <div class="rounded-[2.5rem] overflow-hidden h-64 md:h-80 w-full">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="SEO Analysis" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mx-auto px-6 py-12">
+        <div class="grid lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-8 space-y-12">
+                
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-4">Service Overview</h3>
+                    <p class="text-gray-500 text-sm leading-7 mb-6">
+                        Search Engine Optimization is not just about keywords; it's about building authority and trust. We take a holistic approach to SEO, analyzing every aspect of your website to ensure it meets the latest search engine standards. From technical audits to content strategy, we cover it all to get you to the top of the results page.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-6 rounded-3xl border border-gray-100 flex items-start gap-4">
+                            <div class="bg-brand-panel p-3 rounded-full"><i class="fas fa-search text-brand-dark"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Keyword Strategy</h5>
+                                <p class="text-xs text-gray-500 mt-1">Targeting high-intent terms.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white p-6 rounded-3xl border border-gray-100 flex items-start gap-4">
+                            <div class="bg-brand-panel p-3 rounded-full"><i class="fas fa-tachometer-alt text-brand-dark"></i></div>
+                            <div>
+                                <h5 class="font-bold text-sm">Technical SEO</h5>
+                                <p class="text-xs text-gray-500 mt-1">Speed and structure optimization.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-6">How We Work</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <span class="text-4xl font-bold text-gray-200">01</span>
+                            <div>
+                                <h5 class="font-bold text-lg">Audit & Analysis</h5>
+                                <p class="text-sm text-gray-500 mt-1">We start with a deep dive into your current site health and competitor landscape.</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex gap-4">
+                            <span class="text-4xl font-bold text-gray-200">02</span>
+                            <div>
+                                <h5 class="font-bold text-lg">Strategy Development</h5>
+                                <p class="text-sm text-gray-500 mt-1">Crafting a roadmap that includes content planning and link building.</p>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-gray-100"></div>
+                        <div class="flex gap-4">
+                            <span class="text-4xl font-bold text-gray-200">03</span>
+                            <div>
+                                <h5 class="font-bold text-lg">Implementation & Reporting</h5>
+                                <p class="text-sm text-gray-500 mt-1">Executing the plan and providing monthly reports on growth and ROI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up">
+                    <h3 class="text-2xl font-bold mb-6">Frequently Asked Questions</h3>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                            <button @click="activeAccordion = activeAccordion === 1 ? null : 1" class="w-full flex justify-between items-center p-6 text-left font-bold text-sm hover:bg-gray-50 transition-colors">
+                                <span>How long does it take to see results?</span>
+                                <i class="fas fa-chevron-down transition-transform" :class="{'rotate-180': activeAccordion === 1}"></i>
+                            </button>
+                            <div x-show="activeAccordion === 1" x-collapse class="px-6 pb-6 text-xs text-gray-500 leading-relaxed">
+                                SEO is a long-term strategy. Typically, significant results can be seen within 3 to 6 months, depending on the competitiveness of your industry.
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                            <button @click="activeAccordion = activeAccordion === 2 ? null : 2" class="w-full flex justify-between items-center p-6 text-left font-bold text-sm hover:bg-gray-50 transition-colors">
+                                <span>Do you offer local SEO services?</span>
+                                <i class="fas fa-chevron-down transition-transform" :class="{'rotate-180': activeAccordion === 2}"></i>
+                            </button>
+                            <div x-show="activeAccordion === 2" x-collapse class="px-6 pb-6 text-xs text-gray-500 leading-relaxed">
+                                Yes! We specialize in optimizing Google My Business profiles and local citations to help you capture customers in your specific geographic area.
+                            </div>
+                        </div>
+                         <div class="bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                            <button @click="activeAccordion = activeAccordion === 3 ? null : 3" class="w-full flex justify-between items-center p-6 text-left font-bold text-sm hover:bg-gray-50 transition-colors">
+                                <span>Can I change my plan later?</span>
+                                <i class="fas fa-chevron-down transition-transform" :class="{'rotate-180': activeAccordion === 3}"></i>
+                            </button>
+                            <div x-show="activeAccordion === 3" x-collapse class="px-6 pb-6 text-xs text-gray-500 leading-relaxed">
+                                Absolutely. We offer flexible contracts that allow you to scale your services up or down based on your business needs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-4 space-y-8">
+                
+                <div class="bg-white p-8 rounded-[2rem] border border-gray-100 shadow-soft sticky top-24">
+                    <h5 class="font-bold text-lg mb-6">Other Services</h5>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="detail.html" class="flex justify-between items-center p-3 rounded-xl bg-brand-yellow font-bold text-sm">
+                                <span>SEO Strategy</span> <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="detail.html" class="flex justify-between items-center p-3 rounded-xl hover:bg-gray-50 text-gray-500 text-sm transition-colors group">
+                                <span>PPC Advertising</span> <i class="fas fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="detail.html" class="flex justify-between items-center p-3 rounded-xl hover:bg-gray-50 text-gray-500 text-sm transition-colors group">
+                                <span>Social Media</span> <i class="fas fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="detail.html" class="flex justify-between items-center p-3 rounded-xl hover:bg-gray-50 text-gray-500 text-sm transition-colors group">
+                                <span>Content Marketing</span> <i class="fas fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 bg-brand-dark text-white p-6 rounded-2xl text-center relative overflow-hidden">
+                         <div class="relative z-10">
+                             <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4"><i class="fas fa-headset"></i></div>
+                             <h5 class="font-bold mb-2">Need Help?</h5>
+                             <p class="text-xs text-gray-400 mb-4">Speak with a marketing expert today.</p>
+                             <a href="contact.html" class="inline-block bg-brand-yellow text-black px-6 py-2 rounded-full text-xs font-bold">Contact Us</a>
+                         </div>
+                         <div class="absolute top-0 right-0 w-20 h-20 bg-white/5 rounded-full -mr-10 -mt-10"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container mx-auto px-6 py-20">
+        <div class="bg-brand-panel rounded-[3rem] p-12 md:p-20 relative overflow-hidden flex flex-col md:flex-row items-center cta-pattern" data-aos="fade-up">
+            <div class="relative z-10 max-w-xl">
+                <h2 class="text-5xl font-bold mb-6">Ready to rank higher?</h2>
+                <p class="text-gray-500 mb-8 max-w-sm">Let's build a strategy that puts your brand in front of the right people.</p>
+                <a href="contact.html" class="bg-brand-dark text-white px-8 py-3 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-3 hover:bg-gray-800 transition-colors">
+                    Get Started <i class="fas fa-arrow-right -rotate-45 text-brand-yellow"></i>
+                </a>
+            </div>
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full hidden md:block">
+               <div class="absolute top-[30%] right-[30%] w-8 h-8 bg-brand-yellow rounded-full border-2 border-white shadow-lg animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gradient-to-t from-[#F0F2EA] to-[#FDFBF7] pt-24 pb-12 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-2xl mx-auto mb-16">
+                <a href="index.html" class="flex items-center justify-center gap-2 group mb-6">
+                    <div class="bg-brand-yellow w-8 h-8 rounded-lg flex items-center justify-center text-sm border border-brand-dark transition-transform group-hover:rotate-12"><i class="fas fa-bolt"></i></div>
+                    <span class="font-bold text-2xl tracking-tight">Starship</span>
+                </a>
+                <p class="text-gray-500 mb-6">Subscribe to our newsletter for the latest updates and marketing tips.</p>
+                <div class="flex items-center bg-white border border-gray-200 p-1 rounded-full max-w-md mx-auto shadow-sm">
+                    <input type="email" placeholder="Enter your email" class="flex-1 bg-transparent px-6 py-2 text-sm outline-none">
+                    <button class="w-10 h-10 bg-brand-yellow rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors"><i class="fas fa-arrow-right text-xs"></i></button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto border-t border-gray-200 pt-12 mb-12">
+                 <div><h5 class="font-bold text-xs uppercase tracking-widest mb-6">Support</h5><ul class="space-y-3 text-sm text-gray-500"><li><a href="contact.html">Help Center</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                 <div><h5 class="font-bold text-xs uppercase tracking-widest mb-6">Product</h5><ul class="space-y-3 text-sm text-gray-500"><li><a href="#">Updates</a></li><li><a href="#">Pricing</a></li></ul></div>
+                 <div><h5 class="font-bold text-xs uppercase tracking-widest mb-6">Company</h5><ul class="space-y-3 text-sm text-gray-500"><li><a href="about.html">About Us</a></li><li><a href="contact.html">Careers</a></li></ul></div>
+                 <div><h5 class="font-bold text-xs uppercase tracking-widest mb-6">Social</h5><ul class="space-y-3 text-sm text-gray-500"><li><a href="#">Twitter</a></li><li><a href="#">Instagram</a></li></ul></div>
+            </div>
+            <div class="text-xs text-gray-400 font-medium">&copy; 2025 Starship Agency. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>
